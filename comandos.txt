@@ -1,0 +1,13 @@
+Comandos de configuração:
+
+Comandos de inicialização:
+
+Comandos de Conexão:
+
+Comandos para Manipular os Arquivos:
+
+Comandos de Visualização:
+
+Comandos de Branching e Mesclagem:
+
+Desfazendo Mudanças:
