@@ -1,0 +1,20 @@
+Software Configuration Management (SCM)
+1. Objetivo:
+2. Conceitos:
+	1. Artefatos:
+	2. Controle de Versão:
+	3. Gerenciamento de mudanças:
+	4. Baseline:
+	5. Auditoria de Configuração:
+3. Git:
+	1. Comandos Básicos:
+	2. Área de Staging:
+	3. Fluxo Básico:
+    4. Merge:
+        1. Fast-forward merge: 
+        2. Rebase:
+        3. Merge Request:
+    5. Conflitos:
+    6. Boas Práticas Commits:
+    7. Workflows:
+4. GitHub:
