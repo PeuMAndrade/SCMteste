@@ -1,20 +1,98 @@
 Software Configuration Management (SCM)
 1. Objetivo:
+	Garantir que todas as alterações no software sejam gerenciadas de maneira organizada e controlada, para manter a integridade e a qualidade do produto final
 2. Conceitos:
 	1. Artefatos:
+		- São produtos tangíveis também chamados de itens de configuração que são criados durante o processo de desenvolvimento. Eles podem incluir uma variedade de documentos e ferramentas que ajudam a planejar, executar e gerenciar projetos de software.
+		- Exemplos:
+			1. Documentação 
+			2. Banco de dados
+			3. Código
+			4. Relatórios de progresso
+			5. Documentação de design
 	2. Controle de Versão:
+		- Ferramentas de controle de versão, como Git, são amplamente utilizadas para registrar mudanças no código-fonte, permitindo que diferentes versões do software sejam armazenadas, comparadas e revertidas, se necessário.
+		- Diretório de Trabalho
+			- Diretório do computador com os arquivos do projeto
+		- Repositório:
+			- Local que guarda as versões do projeto, com históricos de modificações e dados associados à essas modificações
+		- Histórico de versão:
+			- Registro de modificações de um projeto
 	3. Gerenciamento de mudanças:
-	4. Baseline:
-	5. Auditoria de Configuração:
+		- Toda alteração no software (novas funcionalidades, correções de bugs, melhorias, etc.) precisa ser gerenciada. Isso envolve o rastreamento de quem fez a mudança, por que ela foi feita e como ela afeta outras partes do software.
+		- ``Issue trancking``
+			- É um processo de gerenciamento de problemas ou solicitações relacionadas ao desenvolvimento de software ou outros projetos
+			- Ajudam a equipe a acompanhar o progresso de cada item e a garantir que todos os problemas sejam identificados e resolvidos de maneira eficiente.
+			- Uma `issue` é composta por:
+				1. Uma descrição
+				2. Sua prioridade
+				3. Seu status
+				4. Quem está atribuido
+				5. Data de criação e Prazo para resolução
+				6. Comentários sobre a complexidade e o progresso
+				7. Sua categoria(bug, melhoria, tarefa)
+		- `Milestones`
+			- Pontos de referência importantes em um projeto que indicam o progresso ou a conclusão de uma etapa significativa. 
+			- Eles servem para marcar eventos chave ou entregas importantes.
+			- Pode ser considerado como o agrupamentos de ``issues`` que levam à um objetivo do projeto
+	4. Baseline
+		- Estado específico de um artefato ou conjunto de artefatos que foi formalmente revisado e aprovado. 
+		- Depois de estabelecida, ela se torna um marco de referência e só pode ser modificada por meio de um processo formal de controle de mudanças.
+		- Tipos:
+			1. Baseline de Requisitos
+			2. Baseline de Design
+			3. Baseline de Código
+			4. Baseline de Cronograma
+	5. Auditoria de Configuração
+		- Processo de revisão e verificação das configurações de um sistema ou produto com intuito de garantir que estejam cumprindo o planejado
 3. Git:
+	- É um sistema de controle de versão mais usado no mundo
+	- Ao clonar um repositório Git, você baixa o código e também todo o histórico de commits. Com isso, cada desenvolvedor tem uma cópia completa do repositório com todas as mudanças de todos os outros usuários
 	1. Comandos Básicos:
+		- `git init` Esse comando criará um repositório local na pasta
+		- `git add` Adiciona arquivos que foram alterados na área de staging
+		- `git rm --cached nome_do_arquivo` Remove o arquivo do staging
+		- `git commit -m "Descsrição do commit"` Cria o pacote de mudanças
+		- `git remote add origin <url>` Esse comando adiciona a URL como referência ao repositório remoto (origin).
+		- ``git push -u origin master`` envia os arquivos para o repositório remoto
+		- `git clone <url HTTPS>` é usado para clonar o repositório remoto para uma maquina 
+		- `git pull` atualiza o repositório local com o repositório remoto
+        - `git branch nome_da_branch`: Para criar uma branch
+        - `git checkout -b nome_da_branch`: Cria uma branch e entra nela
 	2. Área de Staging:
-	3. Fluxo Básico:
+		- Ao usar o git add você envia as mudanças feitas para o Staging
+		- O staging é uma área de preparação, onde você define as mudanças do próximo commit.
+		- Você pode preparar apenas parte das modificações realizadas em um commit e outras partes em outros commits tornando a organização dos commits mais clara
+	3. Fluxo Básico
+		1. Criar ou modificar arquivos no diretório local
+		2. Verificar o status do repositório com `git status`
+		3. Adicionar os arquivos ao `staging` com o git add
+		4. Fazer um commit das alterações com o `git commit`
+		5. Subir as alterações para o repositório remoto com `git push`
     4. Merge:
+        - É uma operação que junta as mudanças de duas branches diferentes em um único branch
         1. Fast-forward merge: 
+            - Se o branch master não teve alterações desde que você criou uma nova branch o Git simplesmente "avança" o ponteiro do master para o commit mais recente do no branch. Não é criada uma junção porque o histórico dos commits já está linear
         2. Rebase:
-        3. Merge Request:
+            -  Também junta mudanças entre branches, porém faz de uma forma diferente reaplicando os commits de uma branch sobre os commits de outra branch, misturando-os.
+            - Comando: `git rebase <branch>`
+        3. Merge Request
+            - é uma funcionalidade usada em sistemas de controle de versão, para solicitar que as mudanças feitas em um branch sejam revisadas antes de incorporadas a outro branch,
     5. Conflitos:
-    6. Boas Práticas Commits:
+        - Se duas branches, alterarem o mesmo arquivo de forma diferente, sugirá um conflito que deve ser resolvido por meio de um outro commit escolhendo uma das versões
+    6. Boas Práticas Commits
+        - Use verbos no imperativo: como:
+            1. feat: Adicionar nova funcionalidade
+            2. fix: Correção de bugs
+            3. refactor: Alteração no código que não altera o comportamento
+            4. docs: Alterações na documentação
+            5. test: Adicionar ou modificar testes
+            6. chore: Atualizações de tarefas que não afetam o código de produção (ex: mudanças no build)
+        - A mensagem do commit deve explicar claramente o que foi alterado e por quê
+        - Faça commits pequenos e frequentes
     7. Workflows:
+        1. Fluxo Centralizado:  Todos os desenvolvedores trabalham em uma única branch compartilhada, enviando suas mudanças diretamente para o repositório remoto
+        2. Fluxo com Branches:  Os desenvolvedores não trabalham diretamente na branch principal, mas criam branches separadas para suas alterações
+        3. Fluxo com Fork:  Ao invés de contribuir diretamente para o repositório principal, os desenvolvedores fazem uma cópia do repositório e trabalham em suas próprias cópias
 4. GitHub:
+	- É uma plataforma de hospedagem de código fonte, que utiliza versionamento de código do git 
