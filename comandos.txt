@@ -1,13 +1,56 @@
 Comandos de configuração:
+    - "git config --global user.name <nome>": Usado para configurar o nome de usuário que será associado aos commits feitos.
+
+    - "git config --global user.email <email>": Usado para configurar o email de usuário que será associado aos commits feitos
+
+    - "git config --list": Lista todas as configurações atuais do Git, como nome de usuário, e-mail, e outras opções de configuração.
+
+    - OBS: O "--global" indica que a configuração será aplicada em todos os repositorios git atuais e os que seram criados ou clonados posteriormente.
 
 Comandos de inicialização:
+    - "git init": Inicializa um novo repositorio Git no diretório atual
+
+    - "git clone <url>": Cria uma copia de um repositorio remoto no seu computador
+
+    - "git clone <SSH Ref>": Clona o repositorio remoto usando uma SSH para autenticação
+
+    - "gh repo clone<nome_repositorio>": Utiliza a GitHub CLI para clonar um repositório do GitHub.
 
 Comandos de Conexão:
+    - "git remote add <nome> <url>": Adiciona um repositório remoto ao projeto local, atribuindo um apelido para se referir a ele. Geralmente usa-se (origin)
+
+    - "git pull <remote> <branch>": Puxa as mudanças do repositório remoto para o branch local e automaticamente mescla as alterações
+
+    - "git push <remote> <branch>"  Envia os commits locais para o repositório remoto no branch especificado
 
 Comandos para Manipular os Arquivos:
+    - "git add": Adiciona arquivos modificados ou novos à área de staging, preparando-os para o commit
+
+    - "git rm --cached <nome do arquivo>": Remove um arquivo da área de staging (deixando o arquivo no diretório local)
+
+    - "git commit -m "Descrição do commit"": Empacota as mudanças da área de staging e adiciona uma mensagem descritiva
 
 Comandos de Visualização:
+    - "git status":  Mostra o estado atual do repositório, listando arquivos modificados, não rastreados, e prontos para commit
+
+    - "git log": Exibe o histórico de commits no repositório, mostrando informações detalhadas como o autor, a data e as mensagens de commit
+
+    - "git version": Exibe a versão instalada do Git no seu sistema
 
 Comandos de Branching e Mesclagem:
+    - "git checkout <nome_da_branch>": Troca para outro branch existente
+
+    - "git branch <nome>": Cria um novo branch com o nome especificado
+
+    - "git merge <branch>": Mescla o conteúdo de outro branch no branch atual, combinando as mudanças
+
+    - "git rebase <branch>" Reaplica os commits do branch atual sobre o histórico do branch especificado, permitindo uma linha de histórico linear
 
 Desfazendo Mudanças:
+    - "git checkout <arquivo>": Reverte as alterações feitas em um arquivo não comitado, restaurando-o ao estado mais recente
+
+    - "git reset HEAD <arquivo>":  Remove um arquivo da área de staging, mas mantém as modificações no diretório de trabalho
+
+    - "git reset HEAD~": Desfaz o último commit, mantendo as alterações no diretório de trabalho para ajustes posteriores
+    
+    - "git revert HEAD":  Cria um novo commit que reverte as mudanças do commit mais recente, preservando o histórico anterior
