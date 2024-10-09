@@ -1,0 +1,11 @@
+1.Workflow
+    Um git Workflow organiza como as pessoas colaboram no código e gerenciam suas modificações
+2.Issue Tracking
+    É o processo de gerenciar tarefas, bugs, melhorias e outras atividades relacionadas ao desenvolvimento de software
+    Ajudam na organização da equipe e do trabalho, na priorização do que é mais importante e ajudam a garantir que tudo o que precisa ser feito esteja documentado e rastreável
+3.Controle de Mudança
+    É o processo de gerenciar alterações em um projeto ou sistema de software, garantindo que qualquer mudança proposta seja devidamente analisada, aprovada, implementada e revisada. Esse processo minimiza o risco de que mudanças introduzam problemas inesperados
+4.Controle de Versão
+    É uma prática que envolve rastrear as mudanças no código-fonte e gerenciar múltiplas versões de um software ao longo do tempo.
+5.Integração Continua
+    É uma prática de desenvolvimento onde o código é integrado e testado regularmente (pelo menos uma vez ao dia). São usadas ferramentas para automatizar o processo de construção e teste do código a cada mudança feita no repositório.
